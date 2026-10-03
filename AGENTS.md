@@ -76,7 +76,7 @@ CI runs `composer validate`, resolves dependencies with `composer update --prefe
 - `UserClient` owns registration/login-side behavior: salt generation, private key computation, verifier generation, client public ephemeral value, session key calculation, and host proof validation.
 - `HostClient` owns server-side behavior: verifier storage input, host public ephemeral value, session key calculation, and client proof validation.
 - SRP protocol changes should be made carefully and covered by `tests/SRPClientIntegrationTest.php`, which documents the intended client/host message order.
-- Cryptographic big integer operations go through `phpseclib\Math\BigInteger`; do not replace this with ad hoc integer/string math.
+- Cryptographic big integer operations go through `phpseclib3\Math\BigInteger` from phpseclib `^3.0.57`; do not replace this with ad hoc integer/string math.
 - The library does not manage database access, sessions, HTTP requests, or user validation. Those responsibilities belong to consuming applications.
 
 ## Commit & PR Conventions
